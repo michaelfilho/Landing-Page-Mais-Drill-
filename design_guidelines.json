@@ -1,0 +1,188 @@
+{
+  "project_context": {
+    "brand_name": "Mais Drill",
+    "description": "Premium D2C pet food brand in Brazil. Fun, energetic, personal, high-quality, trustworthy.",
+    "benchmark": "The Hungry Dog (quality & storytelling, not copy)",
+    "tone": "Human, relaxed, striking, non-clinical. D2C premium + editorial + advertising.",
+    "tech_stack": "Static React (.jsx/.js), Tailwind CSS, Framer Motion, Spline (for 3D)"
+  },
+  "typography": {
+    "fonts_to_install": [
+      "@fontsource/cabinet-grotesk",
+      "@fontsource/manrope"
+    ],
+    "headings": {
+      "fontFamily": "Cabinet Grotesk",
+      "style": "Display, editorial, bold, quirky, expressive",
+      "weights": ["700", "800", "900"],
+      "tracking": "tracking-tight or tracking-tighter for large sizes"
+    },
+    "body": {
+      "fontFamily": "Manrope",
+      "style": "Clean, highly legible sans-serif",
+      "weights": ["400", "500", "600"],
+      "tracking": "normal"
+    },
+    "forbidden_fonts": ["Inter", "Roboto", "Space Grotesk"]
+  },
+  "colors": {
+    "strategy": "Warm, earthy bases with vibrant, energetic accents. No clinical navy or supermarket yellow.",
+    "css_variables": {
+      "--background": "#FDFBF7", 
+      "--foreground": "#1A1918", 
+      "--primary": "#FF5A36", 
+      "--primary-hover": "#E04828",
+      "--primary-foreground": "#FFFFFF",
+      "--secondary": "#2A4D3E",
+      "--secondary-foreground": "#FFFFFF",
+      "--accent": "#F4D06F",
+      "--accent-foreground": "#1A1918",
+      "--muted": "#EFEBE1",
+      "--muted-foreground": "#6E6B65",
+      "--border": "#E5DFD3",
+      "--card": "#FFFFFF"
+    }
+  },
+  "visual_enhancers": {
+    "borders_and_radius": {
+      "cards": "rounded-3xl",
+      "buttons": "rounded-full (pill-shaped)",
+      "badges": "rounded-full",
+      "images": "rounded-[2rem] or organic asymmetrical blob shapes (e.g., rounded-tr-[4rem] rounded-bl-[4rem])",
+      "borders": "1px solid var(--border), slightly darker on hover"
+    },
+    "shadows": {
+      "soft": "shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
+      "hover": "shadow-[0_20px_40px_rgb(255,90,54,0.15)]",
+      "hard_brutalist": "shadow-[4px_4px_0px_0px_rgba(26,25,24,1)] (use selectively for badges or specific bold CTAs)"
+    },
+    "decorations": {
+      "noise": "Subtle SVG grain overlay (opacity-20) on primary colored sections",
+      "stickers": "Hand-drawn SVG arrows, underlines, and circular 'selos' (badges) rotated slightly (e.g., rotate-12)"
+    }
+  },
+  "layout_and_spacing": {
+    "grid": "Bento-style grids, overlapping elements, wide gaps (gap-8, gap-12). Avoid rigid Bootstrap 12-col symmetry.",
+    "spacing": "Generous. Use py-24 or py-32 for sections. Elements need breathing room.",
+    "mobile_first": "Ensure all grids collapse to 1 column gracefully. Font sizes should use fluid typography or Tailwind clamp utilities."
+  },
+  "motion_and_3d": {
+    "3d_strategy": {
+      "hero": "Use Spline React component for a floating 3D premium dog treat or bowl to immediately grab attention.",
+      "product_cards": "Use Framer Motion to create a 3D tilt effect on hover (`useMotionValue`, `useTransform`)."
+    },
+    "scroll": "Smooth scrolling using @studio-freight/lenis (or similar setup).",
+    "micro_interactions": {
+      "buttons": "Scale down slightly on tap (scale: 0.98), hover arrow translates right.",
+      "marquees": "react-fast-marquee. Editorial style, slow and smooth.",
+      "reveals": "Framer motion `whileInView` staggered reveals (y: 30, opacity: 0) for section content."
+    }
+  },
+  "sections_blueprint": [
+    {
+      "name": "Announcement Marquee",
+      "description": "Slow, editorial ticker. Background: secondary (green), Text: white. 'FRETE GRÁTIS PARA TODO O BRASIL 🦴 100% NATURAL'"
+    },
+    {
+      "name": "Header Sticky",
+      "description": "Glassmorphism background (backdrop-blur-md, bg-background/80). Logo left, links center, 'Carrinho' icon right with simulated badge. Animated mobile hamburger menu."
+    },
+    {
+      "name": "Hero Impactante",
+      "description": "Asymmetrical split. Left: Massive typography 'Mais sabor. Mais diversão. Mais Drill.', subtext, and pill CTAs ('QUERO PRO MEU DOG'). Right: 3D Spline interactive element OR large masked cutout image of a happy dog (Image 1 or 4) with a floating organic shape behind it. Line-by-line text reveal on load."
+    },
+    {
+      "name": "Benefícios Rápidos",
+      "description": "Horizontal band with 4 icons + short text (e.g., 'Sem conservantes', 'Rico em Proteína')."
+    },
+    {
+      "name": "Categorias / Produtos",
+      "description": "'Escolha o favorito do seu dog'. Large cards with premium hover (3D tilt using framer-motion). Badges like 'Mais Vendido ✨'."
+    },
+    {
+      "name": "Marquee Animada",
+      "description": "Massive outline text ('text-8xl text-transparent stroke-primary') running in background."
+    },
+    {
+      "name": "Manifesto Emocional",
+      "description": "Centered, large serif/display text: 'Ele não é só um cachorro. E você sabe disso.' Generous negative space."
+    },
+    {
+      "name": "Produto Herói",
+      "description": "Campaign style. Half screen product shot, half screen details (Price, Stars, CTA 'QUERO EXPERIMENTAR')."
+    },
+    {
+      "name": "Por que o seu dog vai amar?",
+      "description": "Bento grid of 3-6 visual benefits using photo cutouts and vector icons."
+    },
+    {
+      "name": "Galeria UGC (#TimeMaisDrill)",
+      "description": "Instagram-style grid with lifestyle photos of dogs and owners (Images 3 & 4)."
+    },
+    {
+      "name": "Prova Social",
+      "description": "Long human testimonials. Photo of dog + owner name + product + stars."
+    },
+    {
+      "name": "Números de Confiança",
+      "description": "Large animated counters (Framer Motion). '+90% digestibilidade', '96% recomendam'."
+    },
+    {
+      "name": "Comparação (Mais Drill x Comum)",
+      "description": "Table layout. Mais Drill column highlighted in Primary color."
+    },
+    {
+      "name": "Filosofia (Never List)",
+      "description": "'O que entra / O que fica de fora'. Split section. Checkmarks vs Crosses."
+    },
+    {
+      "name": "Como Funciona",
+      "description": "4 simple steps with connecting arrows (SVGs)."
+    },
+    {
+      "name": "FAQ Accordion",
+      "description": "Shadcn Accordion customized to not look like a default template. Thick borders, big icons."
+    },
+    {
+      "name": "Newsletter",
+      "description": "Static demonstration form for 'Entre para a matilha'. Do not send or persist personal data."
+    },
+    {
+      "name": "Footer",
+      "description": "Massive footer. Huge logo typography, links, social icons."
+    }
+  ],
+  "components_instructions": {
+    "shadcn": "Install Shadcn components as .jsx/.js (no TypeScript). Use standard Vite + React setup.",
+    "side_cart": "Use Shadcn Sheet component for the drawer. Show placeholder items. CTA inside goes to WhatsApp link.",
+    "icons": "Use lucide-react or @phosphor-icons/react. Add data-testid to ALL interactive elements.",
+    "forms": "Use simple client-side state for the static Newsletter demonstration. Do not send or persist personal data."
+  },
+  "images": {
+    "hero_dog": {
+      "url": "https://images.unsplash.com/photo-1598875706250-21faaf804361?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHw0fHxoYXBweSUyMGRvZyUyMHBvcnRyYWl0fGVufDB8fHx8MTc4Nzc3NTM2M3ww&ixlib=rb-4.1.0&q=85",
+      "description": "Golden retriever puppy, happy, use for Hero or primary section."
+    },
+    "tasty_dog": {
+      "url": "https://images.unsplash.com/photo-1565674244283-993fb27a215f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NjZ8MHwxfHNlYXJjaHw0fHxkb2clMjBlYXRpbmd8ZW58MHx8fHwxNzg3Nzc1MzYzfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Dog licking lips, use for 'Mais Sabor' or product sections."
+    },
+    "lifestyle_1": {
+      "url": "https://images.unsplash.com/photo-1770786442845-a48353e5cdb3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwzfHxkb2clMjB3aXRoJTIwb3duZXIlMjBsaWZlc3R5bGV8ZW58MHx8fHwxNzg3Nzc1MzYzfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Owner and dog on bench, use for UGC or Social Proof."
+    },
+    "lifestyle_2": {
+      "url": "https://images.unsplash.com/photo-1781145609788-c56b5b03f645?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwyfHxkb2clMjB3aXRoJTIwb3duZXIlMjBsaWZlc3R5bGV8ZW58MHx8fHwxNzg3Nzc1MzYzfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Couple holding fluffy dog, use for UGC or Social Proof."
+    }
+  },
+  "universal_guidelines": {
+    "rule_1": "You MUST NOT apply universal transition (transition: all). Use specific transitions (transition-colors, transition-transform).",
+    "rule_2": "Do NOT center align the app container. No '.App { text-align: center; }'.",
+    "rule_3": "Do NOT use transparent backgrounds for elements that overlay content (like sticky headers or dropdowns). Use a solid color or heavy backdrop-blur with a semi-transparent color.",
+    "rule_4": "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "rule_5": "Every interaction needs micro-animations - hover states, button scales, entrance animations.",
+    "rule_6": "All interactive elements MUST have `data-testid` attributes (e.g., `data-testid=\"hero-cta-button\"`).",
+    "rule_7": "Convert all components to .js / .jsx, since this is not a TypeScript project."
+  }
+}

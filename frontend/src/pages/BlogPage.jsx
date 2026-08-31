@@ -1,0 +1,6 @@
+const posts = [
+  ["Como começar na alimentação natural", "Um guia simples para fazer uma transição gradual e consciente.", "photo-1543466835-00a7907e9de1"],
+  ["Caldo de ossos: quando oferecer?", "Hidratação, sabor e nutrientes para complementar a rotina.", "photo-1558788353-f76d92427f16"],
+  ["Mastigação também é bem-estar", "Entenda como o enriquecimento ajuda corpo e mente.", "photo-1587300003388-59208cc962cb"],
+];
+export default function BlogPage() { return <main className="mx-auto max-w-7xl px-5 py-20 lg:px-8"><p className="text-xs font-black uppercase tracking-[.3em] text-drill">Conteúdo Mais Drill</p><h1 className="mt-4 font-display text-5xl font-black sm:text-7xl">Blog da matilha</h1><div className="mt-12 grid gap-7 md:grid-cols-3">{posts.map(([title, text, image]) => <article key={title} className="overflow-hidden rounded-[2rem] border-2 border-ink bg-white"><img src={`https://images.unsplash.com/${image}?auto=format&fit=crop&w=800&q=80`} alt="" className="aspect-[4/3] w-full object-cover"/><div className="p-6"><span className="text-xs font-black uppercase tracking-widest text-leaf">Saúde e bem-estar</span><h2 className="mt-3 font-display text-2xl font-black">{title}</h2><p className="mt-3 text-stone2">{text}</p><button className="mt-5 font-black text-drill">LER ARTIGO →</button></div></article>)}</div></main>; }
