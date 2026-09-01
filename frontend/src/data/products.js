@@ -25,7 +25,8 @@ export const productWithVariant = (product, variant) => variant ? {
 
 export const SUBSCRIPTIONS = {
   avulso: { label: "Compra única", discount: 0 },
-  semanal: { label: "Plano semanal", discount: 0.12 },
   mensal: { label: "Plano mensal", discount: 0.1 },
+  trimestral: { label: "Plano trimestral", discount: 0.13 },
+  semestral: { label: "Plano semestral", discount: 0.15 },
   anual: { label: "Plano anual", discount: 0.18 },
 };

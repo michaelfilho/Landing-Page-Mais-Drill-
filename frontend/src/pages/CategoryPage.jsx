@@ -14,8 +14,9 @@ import { SubscriptionSeal } from "@/components/SubscriptionSeal";
 import IngredientsStory from "@/components/product/IngredientsStory";
 
 const PRODUCT_PLANS = [
-  { key: "semanal", name: "Semanal", discount: 0.12 },
   { key: "mensal", name: "Mensal", discount: 0.1 },
+  { key: "trimestral", name: "Trimestral", discount: 0.13 },
+  { key: "semestral", name: "Semestral", discount: 0.15 },
   { key: "anual", name: "Anual", discount: 0.18, best: true },
 ];
 
@@ -89,7 +90,7 @@ export default function CategoryPage() {
                     </p>
                   </div>
                 </div>
-                <div className="mt-4 grid grid-cols-3 gap-2">
+                <div className="mt-4 grid grid-cols-2 gap-2">
                   {PRODUCT_PLANS.map((plan) => {
                     const planPrice = selected.price * (1 - plan.discount);
                     return (

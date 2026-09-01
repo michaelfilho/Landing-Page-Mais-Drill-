@@ -7,9 +7,10 @@ import { ProductPack } from "@/components/ProductPack";
 import { useCart } from "@/context/CartContext";
 
 const PLANS = [
-  { key: "semanal", title: "Toda semana", detail: "Para uma rotina sempre abastecida", highlight: "12% OFF", discount: 0.12 },
-  { key: "mensal", title: "Todo mês", detail: "Praticidade para o mês inteiro", highlight: "10% OFF", discount: 0.10 },
-  { key: "anual", title: "Clube anual", detail: "Maior economia e cuidado contínuo", highlight: "18% OFF", discount: 0.18, best: true },
+  { key: "mensal", title: "Mensal", detail: "Flexível, renova todo mês", highlight: "10% OFF", discount: 0.10 },
+  { key: "trimestral", title: "Trimestral", detail: "Mais economia a cada 3 meses", highlight: "13% OFF", discount: 0.13 },
+  { key: "semestral", title: "Semestral", detail: "Ótimo equilíbrio de economia", highlight: "15% OFF", discount: 0.15 },
+  { key: "anual", title: "Anual", detail: "Maior economia e cuidado contínuo", highlight: "18% OFF", discount: 0.18, best: true },
 ];
 
 function SubscriptionProductCard({ product }) {
@@ -33,26 +34,26 @@ export default function SubscriptionsPage() {
         <span className="inline-flex items-center gap-2 rounded-full bg-sun px-4 py-2 text-xs font-black text-ink shadow-hard"><Sparkles className="h-4 w-4"/>CLUBE MAIS DRILL</span>
         <h1 className="mt-7 max-w-4xl font-display text-5xl font-black leading-[0.92] tracking-tighter sm:text-7xl">Nunca deixe faltar cuidado, sabor e diversão.</h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream/80">Escolha a frequência, calcule a quantidade para o seu pet e receba automaticamente. Todo plano inclui um presente especial e personalizado.</p>
-        <div className="mt-8 flex flex-wrap gap-3 text-sm font-bold">{["Não prende o limite do cartão", "Cobrança mensal", "Entrega personalizada", "Pause quando quiser"].map((text) => <span key={text} className="flex items-center gap-2 rounded-full border border-cream/25 bg-cream/10 px-4 py-2"><Check className="h-4 w-4 text-sun"/>{text}</span>)}</div>
+        <div className="mt-8 flex flex-wrap gap-3 text-sm font-bold">{["Não prende o limite do cartão", "Cobrança mensal", "Sempre a quantidade ideal por mês", "Pause quando quiser"].map((text) => <span key={text} className="flex items-center gap-2 rounded-full border border-cream/25 bg-cream/10 px-4 py-2"><Check className="h-4 w-4 text-sun"/>{text}</span>)}</div>
       </div>
     </section>
 
     <section className="border-b border-line bg-white">
       <div className="mx-auto grid max-w-7xl gap-4 px-5 py-8 md:grid-cols-2 lg:px-8">
         <article className="flex gap-4 rounded-2xl bg-sand/55 p-5"><span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-leaf text-white"><CreditCard className="h-5 w-5"/></span><div><h2 className="font-display text-lg font-black">Seu limite continua livre</h2><p className="mt-1 text-sm leading-relaxed text-stone2">A assinatura não compromete o valor total no limite do cartão. A cada mês, é cobrado somente o valor correspondente àquele ciclo.</p></div></article>
-        <article className="flex gap-4 rounded-2xl bg-sun/20 p-5"><span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-drill text-white"><CalendarClock className="h-5 w-5"/></span><div><h2 className="font-display text-lg font-black">Você escolhe como receber</h2><p className="mt-1 text-sm leading-relaxed text-stone2">Receba tudo de uma vez ou defina quantas entregas deseja por dia, por semana ou por mês.</p></div></article>
+        <article className="flex gap-4 rounded-2xl bg-sun/20 p-5"><span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-drill text-white"><CalendarClock className="h-5 w-5"/></span><div><h2 className="font-display text-lg font-black">Sempre a quantidade ideal por mês</h2><p className="mt-1 text-sm leading-relaxed text-stone2">Não importa o plano escolhido: todo mês chega exatamente a quantidade calculada pro peso e a atividade do seu pet.</p></div></article>
       </div>
     </section>
 
     <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
       <div className="text-center"><p className="text-xs font-black uppercase tracking-[.3em] text-drill">Escolha seu ritmo</p><h2 className="mt-3 font-display text-4xl font-black sm:text-5xl">Planos para cada rotina</h2></div>
-      <div className="mt-10 grid gap-5 md:grid-cols-3">{PLANS.map((plan) => <article key={plan.key} className={`relative flex flex-col rounded-[2rem] border-2 p-6 ${plan.best ? "border-leaf bg-leaf text-white shadow-hard" : "border-ink bg-white"}`}>
+      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{PLANS.map((plan) => <article key={plan.key} className={`relative flex flex-col rounded-[2rem] border-2 p-6 ${plan.best ? "border-leaf bg-leaf text-white shadow-hard" : "border-ink bg-white"}`}>
         {plan.best && <span className="absolute -top-3 right-5 rounded-full bg-sun px-3 py-1 text-[10px] font-black text-ink">MELHOR ESCOLHA</span>}
         <span className={`inline-flex h-11 w-11 items-center justify-center rounded-full ${plan.best ? "bg-white/15" : "bg-sand"}`}><RefreshCw className="h-5 w-5"/></span>
         <h3 className="mt-5 font-display text-2xl font-black">{plan.title}</h3><p className={`mt-1 text-sm ${plan.best ? "text-white/70" : "text-stone2"}`}>{plan.detail}</p>
         <strong className={`mt-6 block font-display text-4xl ${plan.best ? "text-sun" : "text-drill"}`}>{plan.highlight}</strong>
         <div className={`mt-4 rounded-2xl p-4 ${plan.best ? "bg-white/10" : "bg-sand/60"}`}><p className={`text-[10px] font-black uppercase tracking-[.14em] ${plan.best ? "text-white/60" : "text-stone2"}`}>A cada R$ 100 em produtos</p><div className="mt-2 flex items-end justify-between gap-3"><div><span className="block text-xs">Você economiza</span><strong className={`font-display text-2xl ${plan.best ? "text-sun" : "text-leaf"}`}>{brl(100 * plan.discount)}</strong></div><div className="text-right"><span className="block text-xs">Você paga</span><strong className="font-display text-lg">{brl(100 * (1-plan.discount))}</strong></div></div></div>
-        <ul className="mt-5 space-y-2 text-sm font-bold"><li className="flex gap-2"><Gift className="h-5 w-5 shrink-0"/>Presente especial e personalizado</li><li className="flex gap-2"><ShieldCheck className="h-5 w-5 shrink-0"/>Pause ou cancele quando quiser</li><li className="flex gap-2"><Heart className="h-5 w-5 shrink-0"/>Quantidade sob medida</li></ul>
+        <ul className="mt-5 space-y-2 text-sm font-bold"><li className="flex gap-2"><Gift className="h-5 w-5 shrink-0"/>Presente especial e personalizado</li><li className="flex gap-2"><ShieldCheck className="h-5 w-5 shrink-0"/>Pause ou cancele quando quiser</li><li className="flex gap-2"><Heart className="h-5 w-5 shrink-0"/>Sempre a quantidade ideal por mês</li></ul>
       </article>)}</div>
     </section>
 

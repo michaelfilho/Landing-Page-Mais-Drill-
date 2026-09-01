@@ -8,6 +8,7 @@ const LINKS = [
   { label: "Início", href: "/" },
   { label: "Nosso Propósito", href: "/nosso-proposito" },
   { label: "Alimentação Natural", href: "/produtos/alimentacao-natural" },
+  { label: "Transição Alimentar", href: "/transicao-alimentar" },
   { label: "Caldo de Ossos", href: "/produtos/caldo-de-ossos" },
   { label: "Ossos", href: "/produtos/ossos" },
   { label: "Assinaturas", href: "/assinaturas" },
