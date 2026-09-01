@@ -1,6 +1,5 @@
-import { CalendarCheck, CircleCheck, Quote, Stethoscope, Utensils } from "lucide-react";
+import { CalendarCheck, CircleCheck, Quote, Sparkles, Stethoscope, Utensils } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import TransitionBot from "@/components/TransitionBot";
 
 const STEPS = [
   { title: "Dias 1–3", detail: "25% natural + 75% ração. Só pra apresentar o novo cheiro e sabor.", icon: Utensils },
@@ -15,12 +14,11 @@ export default function TransitionPage() {
       <div className="bg-leaf px-5 py-20 text-center text-white">
         <p className="text-xs font-black uppercase tracking-[.3em] text-sun">Transição alimentar</p>
         <h1 className="mx-auto mt-4 max-w-4xl font-display text-5xl font-black sm:text-7xl">Da ração pro natural, sem estressar o dog.</h1>
-        <p className="mx-auto mt-5 max-w-2xl text-lg text-white/80">Um plano gradual de 10 dias pra trocar a ração pelo alimento natural sem desconforto digestivo — e um assistente ao lado pra calcular a quantidade certa pro seu pet.</p>
+        <p className="mx-auto mt-5 max-w-2xl text-lg text-white/80">Um plano gradual de 10 dias pra trocar a ração pelo alimento natural sem desconforto digestivo — e nosso assistente, no cantinho da tela, pra calcular a quantidade certa pro seu pet.</p>
       </div>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-start">
-          <div>
+      <section className="mx-auto max-w-4xl px-5 py-20 lg:px-8">
+        <div>
             <Reveal>
               <p className="text-xs font-black uppercase tracking-[.3em] text-drill">Por que ir aos poucos</p>
               <h2 className="mt-3 font-display text-3xl font-black sm:text-5xl">O intestino do seu dog precisa de tempo.</h2>
@@ -49,11 +47,13 @@ export default function TransitionPage() {
                 </footer>
               </blockquote>
             </Reveal>
-          </div>
 
-          <div className="lg:sticky lg:top-24 lg:h-[640px]">
-            <TransitionBot />
-          </div>
+            <Reveal delay={0.15}>
+              <div className="mt-10 flex items-center gap-4 rounded-[2rem] border-2 border-ink bg-sun/25 p-6">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-leaf text-white"><Sparkles className="h-6 w-6" /></span>
+                <p className="text-sm font-bold text-ink">Quer saber a quantidade certa pro seu pet? Clique no assistente no cantinho da tela e pergunta pra ele.</p>
+              </div>
+            </Reveal>
         </div>
       </section>
     </main>

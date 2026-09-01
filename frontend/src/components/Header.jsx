@@ -37,7 +37,7 @@ export default function Header() {
   return (
     <header
       data-testid="header"
-      className={`sticky top-0 z-50 border-b border-cream/15 bg-ink/95 text-cream backdrop-blur-xl transition-shadow duration-300 ${
+      className={`sticky top-0 z-50 border-b border-cream/15 bg-ink text-cream backdrop-blur-xl transition-shadow duration-300 ${
         scrolled ? "shadow-lg" : ""
       }`}
     >
