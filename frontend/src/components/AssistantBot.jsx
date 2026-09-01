@@ -22,11 +22,11 @@ const norm = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCa
 function Bubble({ from, children }) {
   const bot = from === "bot";
   return (
-    <div className={`flex gap-2.5 ${bot ? "" : "flex-row-reverse"}`}>
-      <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${bot ? "bg-leaf text-white" : "bg-ink text-cream"}`}>
-        {bot ? <Bot className="h-4 w-4" /> : <PawPrint className="h-4 w-4" />}
+    <div className={`flex gap-1.5 ${bot ? "" : "flex-row-reverse"}`}>
+      <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${bot ? "bg-leaf text-white" : "bg-ink text-cream"}`}>
+        {bot ? <Bot className="h-3 w-3" /> : <PawPrint className="h-3 w-3" />}
       </span>
-      <div className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${bot ? "rounded-tl-sm bg-sand text-ink" : "rounded-tr-sm bg-ink text-cream"}`}>
+      <div className={`max-w-[85%] rounded-xl px-3 py-2 text-xs leading-snug ${bot ? "rounded-tl-sm bg-sand text-ink" : "rounded-tr-sm bg-ink text-cream"}`}>
         {children}
       </div>
     </div>
@@ -34,7 +34,7 @@ function Bubble({ from, children }) {
 }
 
 export default function AssistantBot() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([
     { from: "bot", content: "Oi! 🐾 Eu sou o assistente da Mais Drill. Me conta o peso do seu pet (em kg) que eu calculo a quantidade ideal, ou pergunta sobre a transição alimentar e os planos." },
@@ -217,22 +217,22 @@ export default function AssistantBot() {
       </button>
 
       {open && (
-        <aside className="fixed bottom-24 left-6 z-[61] flex h-[520px] w-[min(92vw,380px)] flex-col rounded-[2rem] border-2 border-ink bg-white shadow-hard" data-testid="assistant-bot">
-          <header className="flex items-center gap-3 border-b border-line px-5 py-4">
-            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-leaf text-white"><Bot className="h-5 w-5" /></span>
-            <div>
-              <h3 className="font-display text-lg font-black leading-tight">Assistente Mais Drill</h3>
-              <p className="text-xs text-stone2">Pergunta sobre pets, transição ou planos</p>
+        <aside className="fixed bottom-20 left-4 z-[61] flex h-[380px] w-[min(80vw,272px)] flex-col rounded-[1.25rem] border-2 border-ink bg-white shadow-hard" data-testid="assistant-bot">
+          <header className="flex items-center gap-2 border-b border-line px-3 py-2.5">
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-leaf text-white"><Bot className="h-4 w-4" /></span>
+            <div className="min-w-0">
+              <h3 className="truncate font-display text-sm font-black leading-tight">Assistente Mais Drill</h3>
+              <p className="truncate text-[10px] text-stone2">Pets, transição ou planos</p>
             </div>
           </header>
 
-          <div ref={listRef} className="flex flex-1 flex-col gap-3 overflow-y-auto p-5">
+          <div ref={listRef} className="flex flex-1 flex-col gap-2.5 overflow-y-auto p-3 text-xs">
             {messages.map((msg, i) => <Bubble key={i} from={msg.from}>{msg.content}</Bubble>)}
 
             {messages.length === 1 && (
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5">
                 {QUICK_STARTS.map((q) => (
-                  <button key={q} onClick={() => handleSend(q)} className="rounded-full border border-line bg-sand px-3 py-1.5 text-xs font-bold text-ink hover:border-leaf">
+                  <button key={q} onClick={() => handleSend(q)} className="rounded-full border border-line bg-sand px-2.5 py-1 text-[10px] font-bold text-ink hover:border-leaf">
                     {q}
                   </button>
                 ))}
@@ -240,7 +240,7 @@ export default function AssistantBot() {
             )}
           </div>
 
-          <form onSubmit={submit} className="flex gap-2 border-t border-line p-4">
+          <form onSubmit={submit} className="flex gap-1.5 border-t border-line p-2.5">
             <input
               type="text"
               value={input}
@@ -248,10 +248,10 @@ export default function AssistantBot() {
               placeholder="Escreva sua pergunta..."
               aria-label="Sua pergunta pro assistente"
               data-testid="assistant-input"
-              className="w-full rounded-full border-2 border-ink bg-white px-4 py-2.5 text-sm font-bold outline-none"
+              className="w-full rounded-full border-2 border-ink bg-white px-3 py-2 text-xs font-bold outline-none"
             />
-            <button type="submit" aria-label="Enviar" data-testid="assistant-send" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ink text-white">
-              <Send className="h-4 w-4" />
+            <button type="submit" aria-label="Enviar" data-testid="assistant-send" className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-ink text-white">
+              <Send className="h-3.5 w-3.5" />
             </button>
           </form>
         </aside>
